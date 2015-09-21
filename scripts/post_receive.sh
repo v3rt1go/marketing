@@ -51,9 +51,11 @@ echo "Moving the new application"
 mv $TEMP_DIR $APP_ROOT
 
 echo "Refresh post-recieve git hook & permissions"
-rm $REPO_DIR/hooks/post-receive
-ln -s $APP_DIR/scripts/post-receive.sh $REPO_DIR/hooks/post-receive
-chmod ug+x $REPO_DIR/hooks/post-receive
+cd $REPO_DIR/hooks
+rm post-receive
+ln -s $APP_DIR/scripts/post-receive.sh post-receive
+cat post-receive
+chmod ug+x post-receive
 
 
 # Turn pm2 back on for this site
