@@ -46,7 +46,7 @@ sleep 1
 
 # Move the temp bits & built stuff to our project in /apps and delete old files
 echo "Deleting the old application"
-rm -R $APP_DIR
+rm -rf $APP_DIR
 echo "Moving the new application"
 mv $TEMP_DIR $APP_ROOT
 
