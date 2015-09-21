@@ -42,6 +42,7 @@ ln -s $SHARED_DIR/data $TEMP_DIR/upload/data
 # Turn off pm2 for this project
 echo "Turning off the pm2 application"
 pm2 stop $APP_NAME
+sleep 1
 
 # Move the temp bits & built stuff to our project in /apps and delete old files
 echo "Deleting the old application"
