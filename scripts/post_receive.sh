@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Setting up script variables
-WEB_ROOT="~/www"
+WEB_ROOT="$HOME/www"
 APP_NAME="boilerplate"
 
 APP_ROOT=$WEB_ROOT/apps
