@@ -50,6 +50,12 @@ rm -rf $APP_DIR
 echo "Moving the new application"
 mv $TEMP_DIR $APP_ROOT
 
+echo "Refresh post-recieve git hook & permissions"
+rm $REPO_DIR/hooks/post-receive
+ln -s $APP_DIR/scripts/post-receive.sh $REPO_DIR/hooks/post-receive
+chmod ug+x $REPO_DIR/hooks/post-receive
+
+
 # Turn pm2 back on for this site
 echo "Starting the pm2 application"
 pm2 start $APP_DIR/index.js --name "$APP_NAME"
