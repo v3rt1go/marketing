@@ -33,7 +33,7 @@ mkdir -p $SHARED_DIR/data
 # the contents of this folder there. With a bare repo we are basicly saying we're
 # going to use this folder as the git repo.
 echo "Initiating bare git repo in $REPO_DIR for $APP_NAME ..."
-git init $REPO_DIR --bare
+git init --bare $REPO_DIR
 
 # Check out the hooks directory - the symlinks
 # Create with vim post-recieve the script and add #!/bin/bash at the first line and echo "Hi Alex" on the second line
