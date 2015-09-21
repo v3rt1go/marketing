@@ -1,19 +1,19 @@
 #!/bin/bash
 
 # Setting up script variables
-WEB_ROOT = "~/www"
-APP_NAME = "boilerplate"
-REMOTE = "https://github.com/v3rt1go/node-boilerplate.git"
+WEB_ROOT="~/www"
+APP_NAME="boilerplate"
+REMOTE="https://github.com/v3rt1go/node-boilerplate.git"
 
-APP_ROOT = $WEB_ROOT/apps
-TEMP_ROOT = $WEB_ROOT/temp
-REPO_ROOT = $WEB_ROOT/repos
-SHARED_ROOT = $WEB_ROOT/shared
+APP_ROOT=$WEB_ROOT/apps
+TEMP_ROOT=$WEB_ROOT/temp
+REPO_ROOT=$WEB_ROOT/repos
+SHARED_ROOT=$WEB_ROOT/shared
 
-APP_DIR = $APP_ROOT/$APP_NAME
-TEMP_DIR = $TEMP_ROOT/$APP_NAME
-REPO_DIR = $REPO_ROOT/$APP_NAME
-SHARED_DIR = $SHARED_ROOT/$APP_NAME
+APP_DIR=$APP_ROOT/$APP_NAME
+TEMP_DIR=$TEMP_ROOT/$APP_NAME
+REPO_DIR=$REPO_ROOT/$APP_NAME
+SHARED_DIR=$SHARED_ROOT/$APP_NAME
 
 echo "Running app server setup script ..."
 
