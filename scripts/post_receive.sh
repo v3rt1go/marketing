@@ -52,9 +52,6 @@ mv $TEMP_DIR $APP_ROOT
 
 echo "Refresh post-recieve git hook & permissions"
 cd $REPO_DIR/hooks
-rm post-receive
-ln -s $APP_DIR/scripts/post-receive.sh post-receive
-cat post-receive
 chmod ug+x post-receive
 
 
