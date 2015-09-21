@@ -13,4 +13,5 @@ require('http').createServer(function(request, response) {
   //   file.serve(request, response);
   // }).resume();
   response.write("Foo");
+  response.end();
 }).listen(8081);
