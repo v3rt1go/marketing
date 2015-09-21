@@ -1,0 +1,14 @@
+server {
+  listen 80;
+
+  server_name boilerplate.webwire.ro www.boilerplate.webwire.ro;
+
+  location / {
+    proxy_pass http://10.135.32.199:8081;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+  }
+}
