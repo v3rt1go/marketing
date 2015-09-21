@@ -55,6 +55,6 @@ chmod ug+x post-receive
 
 # Turn pm2 back on for this site
 echo "Starting the pm2 application"
-cd $APP_DIR && pm2 start start.json
+cd $APP_DIR && pm2 start pm2_start.json
 
 echo "All done! Please check your app."
