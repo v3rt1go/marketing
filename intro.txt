@@ -1,0 +1,19 @@
+Setting up  nodejs app deploys with git & pm2
+
+Things I've learned:
+
+1. NEVER use relative paths in shell scripts. Use $HOME if you won't know the
+   user / home path
+
+2. PM2 is a great tool, but when using it with NVM we should take extra care that
+   the same user & pm2 instance is the one that starts, stops and controls the app
+
+3. PM2 process hanged, was not showing the app int pm2 status, killing the node process
+   just respawned a new one so the only way I could get rid of hanging pm2 process was to
+   reboot the machine
+
+4. Use .json config files when starting the app with pm2 from an automate script.
+   This mitigates the issue with the pm2 exec cwd (current working directory).
+   When calling pm2 from a script, if we don't specify the cwd in a config file, pm2
+   will set it at it's caller's location (ie. ~/www/repos/boilerplate/hooks) and this
+   was breaking relative paths in our application
