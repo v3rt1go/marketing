@@ -11,6 +11,10 @@ module.exports = function (grunt) {
   };
 
   grunt.initConfig({
+    sshPort: '15121',
+    sshUser: 'agriciuc',
+    appServer: 'node1.webwire.ro',
+    appName: 'boilerplate',
     concurrent: {
       dev: {
         tasks: ['nodemon:dev', 'watch'],
@@ -85,7 +89,10 @@ module.exports = function (grunt) {
     },
     shell: {
       setup: {
-        command: "ssh -p15121 agriciuc@node1.webwire.ro < scripts/app_setup.sh",
+        command: [
+          'ssh -p<%= sshPort %> <%= sshUser %>@<%= appServer %> < scripts/app_setup.sh',
+          'git remote add deploy ssh://<%= sshUser %>@<%= appServer %>:<%= sshPort %>/home/<%= sshUser %>/www/repos/<%= appName %>'
+        ].join('&&'),
         options: {
           callback: logger
         }
