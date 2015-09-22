@@ -89,10 +89,13 @@ module.exports = function (grunt) {
     },
     shell: {
       setup: {
-        command: [
-          'ssh -p<%= sshPort %> <%= sshUser %>@<%= appServer %> < scripts/app_setup.sh',
-          'git remote add deploy ssh://<%= sshUser %>@<%= appServer %>:<%= sshPort %>/home/<%= sshUser %>/www/repos/<%= appName %>'
-        ].join('&&'),
+        command: 'ssh -p<%= sshPort %> <%= sshUser %>@<%= appServer %> < scripts/app_setup.sh',
+        options: {
+          callback: logger
+        }
+      },
+      addRemote: {
+        command: 'git remote add deploy ssh://<%= sshUser %>@<%= appServer %>:<%= sshPort %>/home/<%= sshUser %>/www/repos/<%= appName %>',
         options: {
           callback: logger
         }
@@ -121,7 +124,7 @@ module.exports = function (grunt) {
   grunt.registerTask('default', ['eslint', 'concurrent:dev']);
   grunt.registerTask('start:dev', ['eslint', 'concurrent:dev']);
   grunt.registerTask('start:debug', ['eslint', 'concurrent:debug']);
-  grunt.registerTask('production:setup', ['shell:setup']);
+  grunt.registerTask('production:setup', ['shell:setup', 'shell:addRemote']);
   grunt.registerTask('production:deploy', function(commitMsg) {
     grunt.task.run('shell:deploy:' + commitMsg);
   });
