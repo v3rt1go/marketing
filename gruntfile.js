@@ -1,4 +1,15 @@
 module.exports = function (grunt) {
+  'use strict';
+
+  // Callback used to output info from scripts in shell
+  var logger = function log(err, stdout, stderr, cb) {
+    if (err) console.error(err);
+    if (stdout) console.log(stdout);
+    if (stderr) console.error(stderr);
+
+    cb();
+  };
+
   grunt.initConfig({
     concurrent: {
       dev: {
@@ -71,6 +82,26 @@ module.exports = function (grunt) {
           nodeArgs: ['--debug']
         }
       }
+    },
+    shell: {
+      setup: {
+        command: "ssh -p15121 agriciuc@node1.webwire.ro < scripts/app_setup.sh",
+        options: {
+          callback: logger
+        }
+      },
+      deploy: {
+        command: function (commitMsg) {
+          var gitAdd = 'git add .';
+          var gitCommit = 'git commit -am \''+commitMsg+'\'';
+          var gitDeploy = 'git push deploy master';
+
+          return [gitAdd, gitCommit, gitDeploy].join('&&');
+        },
+        options: {
+          callback: logger
+        }
+      }
     }
   });
 
@@ -78,9 +109,14 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks('grunt-shell');
 
   grunt.registerTask('default', ['eslint', 'concurrent:dev']);
   grunt.registerTask('start:dev', ['eslint', 'concurrent:dev']);
   grunt.registerTask('start:debug', ['eslint', 'concurrent:debug']);
+  grunt.registerTask('production:setup', ['shell:setup']);
+  grunt.registerTask('production:deploy', function(commitMsg) {
+    grunt.task.run('shell:deploy:' + commitMsg);
+  });
 
 };
