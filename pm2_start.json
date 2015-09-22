@@ -1,7 +1,7 @@
 {
   "name": "boilerplate",
   "script": "index.js",
-  "cwd": "/home/v3rt1go/www/apps/boilerplate/",
+  "cwd": "/home/agriciuc/www/apps/boilerplate/",
   "env": {
     "NODE_ENV": "production"
   }
