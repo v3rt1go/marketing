@@ -7,9 +7,9 @@ var file = new static.Server('./public'); // ~/repos/boilerplate/hooks/public
 
 require('http').createServer(function(request, response) {
   request.addListener('end', function() {
-    console.log(file);
     file.serve(request, response);
   }).resume();
   // response.write("Foo");
   // response.end();
 }).listen(8081);
+console.log(process.version);
