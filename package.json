@@ -1,8 +1,8 @@
 {
-  "name": "metalsmith-staticsite",
+  "name": "marketing",
   "version": "0.0.1",
-  "description": "demo app for metalsmith.io",
-  "main": "index.js",
+  "description": "simple website for my wife ...",
+  "main": "build.js",
   "scripts": {
     "start": "babel-node build",
     "test": "echo \"Error: no test specified\" && exit 1"
