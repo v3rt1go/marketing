@@ -1,4 +1,5 @@
 {
+  "parser": "babel-eslint",
   "rules": {
     "indent": [2, 2],
     "quotes": 0,
@@ -6,11 +7,13 @@
     "semi": [2, "always"],
     "wrap-iife": [2, "outside"],
     "filenames/filenames": 2,
-    "no-console": 0
+    "no-console": 0,
+    "strict": [2, "global"]
   },
   "env": {
     "node":     true,
-    "browser":  false,
+    "browser":  true,
+    "es6": true
   },
   "plugins": ["filenames"],
   "extends": ["eslint:recommended"],
