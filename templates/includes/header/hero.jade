@@ -1,0 +1,24 @@
+if heroImage
+  append headscripts
+    style.
+      .hero {
+        background: url('#{heroImage}') no-repeat center center;
+      }
+
+section#hero.hero
+  .container
+    .row
+      .col-md-12.text-right.navicon
+        a#nav-toggle.nav_slide_button(href='#')
+          span
+    .row
+      .col-md-8.col-md-offset-2.text-center.inner
+        div(style="background-color: white; padding: 10px;")
+          h1.animated.fadeInDown
+            | #{title}
+          p.animated.fadeInUp.delay-05s(style="font-size: 21px;")
+            | !{description}
+    if cta
+      .row
+        .col-md-6.col-md-offset-3.text-center
+          a.learn-more-btn(href='#features') !{cta}

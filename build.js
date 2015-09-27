@@ -9,8 +9,8 @@ import branch from 'metalsmith-branch';
 import excerpts from 'metalsmith-excerpts';
 import collections from 'metalsmith-collections';
 import permalinks from 'metalsmith-permalinks';
+import assets from 'metalsmith-assets';
 import {site, source as src, dest, posts} from './config';
-
 
 var app = Metalsmith(__dirname);
 
@@ -53,6 +53,12 @@ app.use(layouts({
   default: 'default.jade',
   moment: moment
 }));
+
+app.use(assets({
+  source: './public',
+  destination: './public'
+}));
+
 app.use(serve({
   server : dest,
   files  : ["src/**/*.md", "templates/**/*.jade"]
