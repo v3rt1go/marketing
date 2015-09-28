@@ -1,23 +1,6 @@
 extends ./main.jade
 
 prepend main
-  h3 Welcome to my blog dasd asd das das
-  p To view all the posts click  dasda
-   a(href="/posts") here
-   
-append footscripts
-  script.
-    var h1 = $('h1.animated');
-    var title = h1.html().split(' ');
-    var results = [];
-    if (title.length > 1) {
-      for(var i = 0; i < title.length; i++) {
-        if (i%2 === 0) {
-          results.push(title[i]);
-          continue;
-        }
-        var newStr = '<span>' + title[i] + '</span>';
-        results.push(newStr);
-      }
-      h1.html(results.join(' '));
-    }
+  include ../includes/elements/text-plain.jade
+  include ../includes/elements/features.jade
+  include ../includes/elements/text-carousel.jade
