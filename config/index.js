@@ -1,7 +1,7 @@
 'use strict';
 
 export const site = {
-  title: 'My super cool static blog',
+  title: 'Nicoleta Griciuc | Specialist Marketing & PR',
   meta_keywords: 'foo, bar, baz',
   meta_description: 'Some seo stuff going on here',
   meta_author: 'Alex Griciuc',
@@ -14,7 +14,7 @@ export const site = {
   og_type: 'article',
   navigation: {
     'Introduction': '#intro',
-    'Features': '#features', 
+    'Features': '#features',
     'Responsive design': '#responsive',
     'Portfolio': '#portfolio',
     'Team': '#team',
