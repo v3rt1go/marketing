@@ -1,15 +1,15 @@
 'use strict';
 
-import Metalsmith from 'metalsmith';
-import markdown from 'metalsmith-markdown';
-import layouts from 'metalsmith-layouts';
-import serve from 'metalsmith-browser-sync';
-import moment from 'moment';
-import branch from 'metalsmith-branch';
-import excerpts from 'metalsmith-excerpts';
-import collections from 'metalsmith-collections';
-import permalinks from 'metalsmith-permalinks';
-import assets from 'metalsmith-assets';
+import Metalsmith                         from 'metalsmith';
+import markdown                           from 'metalsmith-markdown';
+import layouts                            from 'metalsmith-layouts';
+import serve                              from 'metalsmith-browser-sync';
+import moment                             from 'moment';
+import branch                             from 'metalsmith-branch';
+import excerpts                           from 'metalsmith-excerpts';
+import collections                        from 'metalsmith-collections';
+import permalinks                         from 'metalsmith-permalinks';
+import assets                             from 'metalsmith-assets';
 import {site, source as src, dest, posts} from './config';
 
 var app = Metalsmith(__dirname);
@@ -25,10 +25,10 @@ app.use(markdown());
 app.use(excerpts());
 app.use(collections({
   posts: {
-    pattern: 'posts/*.md',
-    sortBy: 'modifyDate',
-    reverse: true,
-    metadata: {posts: posts}
+    pattern  : 'posts/*.md',
+    sortBy   : 'modifyDate',
+    reverse  : true,
+    metadata : {posts: posts}
   }
 }));
 

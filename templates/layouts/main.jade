@@ -9,19 +9,11 @@ html(lang="ro")
     // HEAD - includes meta and headscripts blocks
     include ../includes/head.jade
   body#top
-    block header
-      header#home
-        //- NAVIGATION
-        include ../includes/header/navigation.jade
-        //- HERO IMAGE
-        include ../includes/header/hero.jade
+    header#home
+      include ../includes/header/navigation.jade
+      include ../includes/header/hero.jade
+      block header
     block main
-      // TEXT
-      include ../includes/elements/text-plain.jade
-      // FEATURES
-      include ../includes/elements/features.jade
-      // TEXT CAROUSEL
-      include ../includes/elements/text-carousel.jade
       // BANNER
       include ../includes/elements/banner.jade
       // FEATURES CAROUSEL

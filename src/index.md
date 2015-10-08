@@ -1,6 +1,6 @@
 ---
 layout: index.jade
-title: Title of the site
+title: Nicoleta Griciuc | Specialist Marketing & PR
 description: Specialist Marketing &amp; PR
 cta: Afla cum te pot ajuta
 meta_keywords: one, two, three
