@@ -60,6 +60,7 @@ app.use(assets({
 }));
 
 app.use(serve({
+  port   : 8099,
   server : dest,
   files  : ["src/**/*.md", "templates/**/*.jade"]
 }));

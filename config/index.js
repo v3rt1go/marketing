@@ -2,7 +2,7 @@
 
 export const site = {
   title: 'My super cool static blog',
-  meta_keywords: 'foo, bar, baz',
+  meta_keywords: 'asd, dsa',
   meta_description: 'Some seo stuff going on here',
   meta_author: 'Alex Griciuc',
   og_title: 'lorem ipsum',
@@ -14,7 +14,7 @@ export const site = {
   og_type: 'article',
   navigation: {
     'Introduction': '#intro',
-    'Features': '#features', 
+    'Features': '#features',
     'Responsive design': '#responsive',
     'Portfolio': '#portfolio',
     'Team': '#team',
