@@ -5,17 +5,18 @@ html(lang="ro")
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     title= title ? title + " | " + site.title : site.title
-    
+
     // HEAD - includes meta and headscripts blocks
     include ../includes/head.jade
   body#top
     header#home
-      include ../includes/header/navigation.jade
       include ../includes/header/hero.jade
       block header
     block main
       // BANNER
-      include ../includes/elements/banner.jade
+      //-include ../includes/elements/banner.jade
+      // CTA
+      include ../includes/elements/cta.jade
       // FEATURES CAROUSEL
       include ../includes/elements/features-carousel.jade
       // TEAM
@@ -24,10 +25,10 @@ html(lang="ro")
       include ../includes/elements/subscribe.jade
       // CONTACT
       include ../includes/elements/contact.jade
-    
+
     block footer
       include ../includes/footer.jade
-    
+
     block footscripts
       // jQuery (necessary for Bootstrap's JavaScript plugins)
       script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')

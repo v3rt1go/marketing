@@ -1,39 +1,33 @@
-section#contact.dark-bg.text-center.section-padding.contact-wrap
+article#contact.dark-bg.text-center.section-padding.contact-wrap
+  article
   a.up-btn(href='#top')
     i.fa.fa-chevron-up
   .container
     .row
       .col-md-12
-        h1.arrow Drop us a line
+        h1.arrow Trimite-mi un mesaj
     .row.contact-details
-      .col-md-4
-        .light-box.box-hover
-          h2
-            i.fa.fa-map-marker
-            span Address
-          p Level 6, 23 Pitt St, Sydney
-      .col-md-4
-        .light-box.box-hover
-          h2
-            i.fa.fa-mobile
-            span Phone
-          p +61 9 211 3747
-      .col-md-4
-        .light-box.box-hover
-          h2
-            i.fa.fa-paper-plane
-            span Email
-          p
-            a(href='#') hey@halcyondays.com
+      .col-md-12
+        form(action='#' method="POST")
+          .row(style="padding: 10px;")
+            .col-md-6(style="text-align: right;")
+              input(type='text', name='name', placeholder='Nume', required='')
+            .col-md-6(style="text-align: left;")
+              input(type='email', name='email', placeholder='E-mail sau telefon', required='')
+          .row(style="padding: 10px;")
+            .col-md-12
+              textarea(name='messsage', placeholder='Mesaj', required='')
+              br
+              input(type='submit', name='', value='TRIMITE')
     .row
       .col-md-12
         ul.social-buttons
           li
             a.social-btn(href='#')
-              i.fa.fa-dribbble
+              i.fa.fa-facebook
           li
             a.social-btn(href='#')
               i.fa.fa-twitter
           li
             a.social-btn(href='#')
-              i.fa.fa-envelope
+              i.fa.fa-linkedin

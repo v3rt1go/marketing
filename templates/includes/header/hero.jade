@@ -3,11 +3,12 @@ if heroImage
     style.
       .hero {
         background: url('#{heroImage}') no-repeat center center;
+        background-position: 0 54%;
       }
 
 section#hero.hero
   .container
-    .row
+    .row(style="display: none;")
       .col-md-12.text-right.navicon
         a#nav-toggle.nav_slide_button(href='#')
           span
