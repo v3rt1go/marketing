@@ -10,7 +10,8 @@ block meta
   meta(property="og:site_name", content="#{og_sitename ? og_sitename : site.og_sitename}")
   meta(property="og:type", content="#{og_type ? og_type : site.og_type}")
   
-link(rel='shortcut icon', href='public/favicon.png')
+  link(rel='shortcut icon', href='public/favicon.ico' type="image/x-icon")
+  link(rel='icon', href='public/favicon.ico' type="image/x-icon")
 block headscripts
   link(href='http://fonts.googleapis.com/css?family=Varela+Round', rel='stylesheet', type='text/css')
   link(href='public/assets/css/bootstrap.min.css', rel='stylesheet')
